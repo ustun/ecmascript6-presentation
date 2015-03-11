@@ -1,8 +1,8 @@
 var x = {
-    ad: "Ustun",
-    merhaba: function () {
+    name: "Ustun",
+    hello: function () {
         var helper = function () {
-            console.log("Adım ", this.ad);
+            console.log("I'm  ", this.name);
         };
 
         helper();
@@ -10,48 +10,48 @@ var x = {
     }
 };
 try {
-    x.merhaba();
+    x.hello();
 } catch (e) {
     console.error(e);
 }
 
 
 var x = {
-    ad: "Ustun",
-    merhaba: function () {
+    name: "Ustun",
+    hello: function () {
         var that = this;
         var helper = function () {
-            console.log("Adım ", that.ad);
+            console.log("I'm  ", that.name);
         };
 
         helper();
 
     }
 };
-x.merhaba();
+x.hello();
 
 
 var x = {
-    ad: "Ustun",
-    merhaba: function () {
+    name: "Ustun",
+    hello: function () {
         var helper = function () {
-            console.log("Adım ", this.ad);
+            console.log("I'm  ", this.name);
         }.bind(this);
 
         helper();
 
     }
 };
-x.merhaba();
+x.hello();
 
 
 var x = {
-    ad: "Ustun",
-    merhaba() {
-        var helper = () => console.log("Adım ", this.ad);
+    name: "Ustun",
+    hello() {
+        var helper = () => console.log("I'm  ", this.name);
 
         helper();
 
     }
 };
-x.merhaba()
+x.hello()

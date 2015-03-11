@@ -1,6 +1,6 @@
-function merhaba(ad="Ustun", selam="Merhaba") {
-console.log(selam + " " + ad);
+function hello(name="Ustun", greeting="Hello") {
+console.log(greeting + " " + name);
 }
 
 
-merhaba(selam="Hello", ad="Ozgur")
+hello(greeting="Hello", name="Ozgur"); // DOES NOT WORK, not keyword params

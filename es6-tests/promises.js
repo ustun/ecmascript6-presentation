@@ -1,30 +1,30 @@
 require("babel/polyfill");
 
-var ogrenciyiBul = new Promise(function (resolve, reject) {
-    console.log("Ogrenci bulunuyor");
+var findStudent = new Promise(function (resolve, reject) {
+    console.log("Student is being searched...");
 
     setTimeout(function () {
-        console.log("Ogrenci bulundu");
+        console.log("Student found");
         resolve("Ustun");
     }, 1000);
 
 });
 
-var sinifiBul = new Promise(function (resolve, reject) {
+var findClass = new Promise(function (resolve, reject) {
 
-    console.log("Sinif bulunuyor");
+    console.log("Classname is being searched...");
 
     setTimeout(function () {
-        console.log("Sinif bulundu");
+        console.log("Classname found");
         resolve(5);
     }, 1000);
 
 });
 
 
-var okuluBul = new Promise(function (resolve, reject) {
+var findSchool = new Promise(function (resolve, reject) {
 
-    console.log("Okul bulunuyor");
+    console.log("School is being searched...");
 
     setTimeout(function () {
         resolve(5);
@@ -33,11 +33,11 @@ var okuluBul = new Promise(function (resolve, reject) {
 });
 
 
-ogrenciyiBul
-    .then(sinifiBul)
-    .then(okuluBul)
-    .then(function (okul) {
-        console.log("Okul bulundu. No: " + okul);
+findStudent
+    .then(findClass)
+    .then(findSchool)
+    .then(function (school) {
+        console.log("School found. No: " + school);
     });
 
 
@@ -47,7 +47,7 @@ var search = function () {
     setTimeout(function () {
         resolve();
 
-        console.log("Arama sonlandi.");
+        console.log("Search over.");
 
     }, Math.random() * 1000);
 
@@ -59,7 +59,7 @@ var search1 = function () {
     setTimeout(function () {
         resolve();
 
-        console.log("Arama1 sonlandi.");
+        console.log("Search1 over.");
 
     }, Math.random() * 1000);
 
@@ -67,11 +67,11 @@ var search1 = function () {
 }
 
 Promise.all([search(), search(), search()]).then(function () {
-    console.log("Butun aramalar bitti");
+    console.log("All searches over");
 });
 
 
 Promise.race([search1(), search1(), search1()]).then(function () {
-    console.log("Tek bir arama bitti");
+    console.log("A single search is over");
 
 });

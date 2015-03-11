@@ -2,25 +2,25 @@ class Human {
     constructor(name, age) {
         this.name = name;
         this.age = age;
-        this.parti = null;
+        this.party = null;
     }
 
-    oyVerebilir() {
-        return this.age >= 18 && !this.parti;
+    canVote() {
+        return this.age >= 18 && !this.party;
     }
 
-    oyVer(parti) {
-        if (this.oyVerebilir()) {
-            console.log(`${parti} partisine oy veriyor`);
-            this.parti = parti;
+    vote(party) {
+        if (this.canVote()) {
+            console.log(`votes for ${party} party`);
+            this.party = party;
 
         } else {
-            console.warn("oy veremez");
-            if (this.parti) {
-                console.warn("mukerrer oy");
+            console.warn("can't vote");
+            if (this.party) {
+                console.warn("already voted");
             }
             if (this.age < 18) {
-                console.warn("resit degil");
+                console.warn("age issue");
             }
         }
     }
@@ -33,20 +33,20 @@ class Ogrenci extends Human {
         this.school = school;
     }
 
-    oyVer(parti) {
-        console.warn(`${this.school} okulundaki ogrenci oy veriyor`);
-        super.oyVer(parti);
+    vote(party) {
+        console.warn(`${this.school} school student is voting`);
+        super.vote(party);
     }
 
 }
 
 var u = new Human("ustun", 30);
 
-u.oyVer("X");
+u.vote("X");
 
-u.oyVer("Y");
+u.vote("Y");
 
 
 var a = new Ogrenci("Ahmet", 17, "TED");
 
-a.oyVer("X");
+a.vote("X");

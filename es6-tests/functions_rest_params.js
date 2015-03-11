@@ -1,34 +1,34 @@
 // Rest Parameters
 
-function ornek(ilkSayi, ...kalanSayilar) {
-    console.log("ilkSayi", ilkSayi);
-    console.log("kalanSayilar", kalanSayilar);
-    console.log(Array.isArray(kalanSayilar), Array.isArray(arguments))
+function example(firstNum, ...rest) {
+    console.log("firstNum", firstNum);
+    console.log("rest", rest);
+    console.log(Array.isArray(rest), Array.isArray(arguments))
 
 }
 
-ornek(1, 2, 3, 4);
+example(1, 2, 3, 4);
 
-ornek(4, 5, 6, 7, 8);
+example(4, 5, 6, 7, 8);
 
 
 
-// Rest Params 3. Ornek
+// Rest Params 3. Example
 
-var hesapla = function (islem, ...sayilar) {
-    var islemler = {
+var compute = function (op, ...sayilar) {
+    var ops = {
         '-': (a, b) => a-b,
         '+': (a, b) => a+b,
         '*': (a, b) => a*b
     };
 
-    var ilkDeger = {'-': 0, '+': 0, '*': 1};
+    var initial = {'-': 0, '+': 0, '*': 1};
 
-    return sayilar.reduce(islemler[islem], ilkDeger[islem]);
+    return sayilar.reduce(ops[op], initial[op]);
 };
 
 
 
-console.log(hesapla('+', 1, 2, 3, 4, 5));
-console.log(hesapla('*', 1, 2, 3, 4, 5));
-console.log(hesapla('-', 1, 2, 3, 4, 5));
+console.log(compute('+', 1, 2, 3, 4, 5));
+console.log(compute('*', 1, 2, 3, 4, 5));
+console.log(compute('-', 1, 2, 3, 4, 5));
