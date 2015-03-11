@@ -1,0 +1,20 @@
+<html>
+
+  <style>
+    body { margin: 30px auto 0 auto; width: 800px;}
+    a { cursor: pointer; display: block; font-size: 35px;}
+  </style>
+
+
+  <a>Bir</a>
+  <a>İki</a>
+  <a>Üç</a>
+
+  <script>
+   var links = document.getElementsByTagName('a')
+       for (var i = 0, len = links.length; i < len; i++){
+           links[i].addEventListener('click', function(e){
+               alert('You clicked on link ' + i)
+           }, false)
+       }
+  </script>

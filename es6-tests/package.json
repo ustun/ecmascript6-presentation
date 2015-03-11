@@ -1,0 +1,17 @@
+{
+  "name": "es6-tests",
+  "version": "0.0.0",
+  "description": "",
+  "main": "foo.js",
+  "dependencies": {
+    "babel-core": "^4.6.1",
+    "babel-loader": "^4.0.0",
+    "webpack": "^1.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
